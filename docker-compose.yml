@@ -1,0 +1,15 @@
+version: '3'
+services:
+  react-app:
+    build: ./movie-data-builder-fe
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./movie-data-builder-fe:/app
+      - /app/node_modules
+  backend:
+    build: ./movie-data-builder-be
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./movie-data-builder-be:/app
