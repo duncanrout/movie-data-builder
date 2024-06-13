@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 function App() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [movies, setMovies] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,6 +42,20 @@ function App() {
       });
   };
 
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/popular-movies');
+        const data = await response.json();
+        setMovies(data);
+      } catch (error) {
+        console.error('Error fetching movies:', error);
+      }
+    };
+
+    fetchMovies();
+  }, []);
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit}>
@@ -61,6 +76,16 @@ function App() {
         <button type="submit">Submit</button>
       </form>
       <button onClick={handleDownload}>Export</button>
+      <h1>Popular Movies</h1>
+      <ul>
+        {movies.map(movie => (
+          <li key={movie.id}>
+            <h2>{movie.title}</h2>
+            <p>{movie.overview}</p>
+            <img src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} alt={movie.title} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
