@@ -1,18 +1,89 @@
 .App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+nav ol {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+}
+
+nav ol li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.main-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.current-image {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.details-container {
+  flex: 1;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rating-input {
+  display: flex;
+  align-items: center;
+}
+
+.rating-input input {
+  width: 30px;
+  margin: 0 5px;
+  text-align: center;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.navigation-buttons button {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+.skip-button {
+  margin-top: 20px;
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 5px 10px;
+  font-size: 16px;
 }
