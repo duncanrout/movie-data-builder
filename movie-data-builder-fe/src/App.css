@@ -1,89 +1,26 @@
-.App {
+/* Container for the columns */
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   padding: 20px;
-  font-family: Arial, sans-serif;
 }
 
-nav {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-nav ol {
-  display: flex;
-  justify-content: space-around;
-  list-style: none;
-  padding: 0;
-}
-
-nav ol li a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-.main-content {
-  display: flex;
-  align-items: flex-start;
-}
-
-.image-container {
+/* Styling for each column */
+.column {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-width: 200px; 
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.current-image {
-  max-width: 300px;
-  border-radius: 10px;
-}
-
-.details-container {
-  flex: 1;
-  margin-left: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.rating-input {
-  display: flex;
-  align-items: center;
-}
-
-.rating-input input {
-  width: 30px;
-  margin: 0 5px;
-  text-align: center;
-}
-
-.navigation-buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.navigation-buttons button {
+.genre {
+  display: inline-block;
   padding: 5px 10px;
-  font-size: 16px;
-}
-
-.skip-button {
-  margin-top: 20px;
-  padding: 5px 10px;
-  font-size: 16px;
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  cursor: pointer;
+  margin: 0 5px 5px 0;
+  color: #fff;
   border-radius: 5px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 5px 10px;
-  font-size: 16px;
+  font-size: 0.9em;
 }
